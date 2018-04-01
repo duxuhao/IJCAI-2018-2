@@ -106,8 +106,11 @@ def convert_time(df):
     df['context_timestamp'] = df['context_timestamp'].apply(time2cov)
     df.sort_values(by='context_timestamp',inplace=True)
 
-    for f in ['shop_id', 'item_brand_id', 'item_id', 'item_category_list','item_pv_level','item_sales_level','item_collected_level','item_price_level','context_page_id']:
-        df = user_check(df, f)
+    for f in ['shop_id', 'item_brand_id', 'item_id', 'item_category_list','item_pv_level','item_sales_level','item_collected_level','item_price_level','context_page_id','predict_category_property_H_0','item_property_list_0']:
+        try:
+            df = user_check(df, f)
+        except:
+            pass
     n = 0
     check_time_day = np.ones((len(df),1))
     num = {}
@@ -127,3 +130,14 @@ def convert_time(df):
     f2 = 'user_id_query_day'
     df['check_ratio_day_all'] = df[f1] / df[f2]
     return df
+
+def preKfold(train, test, features):
+#    start = time.time()
+    for r_f in features:
+        temp = r_f.split('-')
+        if temp[-1] == 'mean':
+            train = merge_mean(train, temp[:-1])
+            test = pd.merge(test, train[temp[:-1] + [r_f]].drop_duplicates(), on = temp[:-1], how = 'left')
+
+#    print('Used time: {} s'.format(np.round((time.time() - start)),2))
+    return train, test

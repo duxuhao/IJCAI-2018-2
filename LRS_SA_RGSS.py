@@ -58,18 +58,19 @@ class LRS_SA_RGSS_combination():
         selectcol = list(OrderedDict.fromkeys(selectcol))
         X, y = self.df, self.df[self.Label]
         totaltest = 0
-        try:
-            for D in [18,24]:
+        if 1:
+#        try:
+            for D in [24]:
                 T = (X.day != D)
-                X_train, X_test = preKfold(X[T], X[~T], selectcol)
+                X_train, X_test = X[T], X[~T]
                 X_train, X_test = X_train[selectcol], X_test[selectcol]
                 y_train, y_test = y[T], y[~T]
                 self.clf.fit(X_train,y_train, eval_set = [(X_train, y_train), (X_test, y_test)], eval_metric='logloss', verbose=False,early_stopping_rounds=200)
                 totaltest += self.LossFunction(y_test, self.clf.predict_proba(X_test)[:,1])
-            totaltest /= 2.0
+            totaltest /= 1.0
             print('Mean loss: {}'.format(totaltest))
-        except ValueError:
-            totaltest = [self.score - 1]
+#        except ValueError:
+#            totaltest = [self.score - 1]
 #        try:
         if 1:
             if np.mean(totaltest) < self.score: # only when the score improve, the program will record
@@ -177,3 +178,4 @@ class LRS_SA_RGSS_combination():
         for rm in Effective:
              self.df.drop(rm, axis = 1, inplace=True)
         self.columnname.append(self.remain)
+

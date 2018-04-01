@@ -43,17 +43,18 @@ def testdata(df,clf,features):
     return clf
 
 def main(temp, clf, CrossMethod, RecordFolder, test = False):
-    df1 = pd.read_csv('data/train/train.csv')
-    df1.context_timestamp += 8*60*60
-    df1 = convert_time(df1)
-    features = list(df1.columns)
-    df = pd.read_csv('data/train/round1_ijcai_18_train_20180301.txt',sep=' ')
-    df.context_timestamp += 8*60*60
+    df = pd.read_csv('data/train/train.csv')
+    df = df[~pd.isnull(df.is_trade)]
+#    df1.context_timestamp += 8*60*60
+#    df1 = convert_time(df1)
+#    features = list(df1.columns)
+#    df = pd.read_csv('data/train/round1_ijcai_18_train_20180301.txt',sep=' ')
+#    df.context_timestamp += 8*60*60
 #    df = preprocessing(df)
-    df = convert_time(df)
-    item_category_list_unique = list(np.unique(df1.item_category_list))
+#    df = convert_time(df)
+    item_category_list_unique = list(np.unique(df.item_category_list))
     df.item_category_list.replace(item_category_list_unique, list(np.arange(len(item_category_list_unique))), inplace=True)
-    df1.item_category_list.replace(item_category_list_unique, list(np.arange(len(item_category_list_unique))), inplace=True)
+#    df1.item_category_list.replace(item_category_list_unique, list(np.arange(len(item_category_list_unique))), inplace=True)
     addcol = []
     '''
        'item_property_list_0', 'item_property_list_1', 'item_property_list_2',
@@ -74,11 +75,7 @@ def main(temp, clf, CrossMethod, RecordFolder, test = False):
        'hour-item_price_level-mean', 'hour-item_brand_id-mean',
        ]
     '''
-#    df = df.merge(df1[col], on = 'instance_id', how = 'left')
-    #df.fillna(-1, inplace = True)
-    if test:
-        testdata(df1,clf,temp)
-        return True
+
     uselessfeatures = ['instance_id', 'item_property_list', 'context_id', 'context_timestamp', 'predict_category_property', 'is_trade']
     ColumnName = obtaincol(df, uselessfeatures) # + addcol #obtain columns withouth the useless features
     print(ColumnName)
@@ -106,7 +103,7 @@ if __name__ == "__main__":
              'lgb3': lgbm.LGBMClassifier(random_state=1, num_leaves = 6, n_estimators=1000,max_depth=3,learning_rate = 0.09, n_jobs=30),
              'lgb4': lgbm.LGBMClassifier(random_state=1, num_leaves = 6, n_estimators=5000,max_depth=3,learning_rate = 0.095, n_jobs=30),
              'lgb5': lgbm.LGBMClassifier(random_state=1, num_leaves = 6, n_estimators=5000,max_depth=3,learning_rate = 0.1, n_jobs=30),
-             'lgb6': lgbm.LGBMClassifier(random_state=1, num_leaves = 6, n_estimators=5000,max_depth=3,learning_rate = 0.08, n_jobs=30)
+             'lgb6': lgbm.LGBMClassifier(random_state=1, num_leaves = 6, n_estimators=5000,max_depth=3,learning_rate = 0.05, n_jobs=30)
             }
 
     CrossMethod = {'+':add,
@@ -114,7 +111,7 @@ if __name__ == "__main__":
                    '*':times,
                    '/':divide,}
 
-    RecordFolder = 'record_newselection_lgb6_30_2.log'
+    RecordFolder = 'record_newselection_lgb6_01.log'
     modelselect = 'lgb6'
     temp = ['item_price_level', 'item_sales_level', 'user_id_query_day', 'shop_score_service', 'hour', 'shop_id_query_day','shop_review_num_level', 'user_age_level', 'user_star_level', 'item_collected_level', 'item_city_id_query_day', 'user_id_query_day_hour', 'user_age_level_query_day', 'item_category_list-mean', 'context_page_id']
     temp = ['item_category_list-mean', 'shop_score_delivery', 'item_sales_level', 'hour', 'item_price_level', 'user_age_level', 'user_star_level',
@@ -233,4 +230,24 @@ if __name__ == "__main__":
                  ]
 
     temp = ['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'item_pv_level', 'user_gender_id', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_review_num_level', 'shop_review_positive_rate', 'shop_score_service', 'shop_score_delivery', 'hour', 'day', 'user_id_query_day_hour', 'check_item_category_list_ratio', 'check_ratio_day_all', 'check_time_day', 'shop_id', 'item_id_query_day', 'check_shop_id_ratio', 'user_id_query_day_item_brand_id', 'user_id_query_day_hour_item_brand_id', 'check_item_brand_id_ratio', 'user_id_query_day_item_id', 'user_id_query_day', 'item_brand_id']
+    temp = ['item_category_list', 'item_price_level', 
+                  'item_sales_level', 
+                  'item_collected_level', 'item_pv_level', 
+                  'user_gender_id', 'user_age_level', 'user_occupation_id', 'user_star_level', 
+                  'context_page_id', 'shop_review_num_level', 'shop_review_positive_rate', 
+                  'shop_score_service', 'shop_score_delivery', 'hour', 'day', 'user_id_query_day_hour', 
+                  'shop_id', 
+                  'item_id_query_day',  'user_id_query_day_item_brand_id', 
+                  'user_id_query_day_hour_item_brand_id', 
+                  'user_id_query_day', 'item_brand_id','user_id_query_day_item_id', 
+                  'check_item_brand_id_ratio', 
+                  'check_shop_id_ratio',
+                  'check_item_category_list_ratio',
+                  'check_ratio_day_all', 
+                  'check_time_day',
+                  'item_city_id_shop_cnt',
+                  'item_city_id_shop_rev_prob',
+                  'item_id_shop_rev_cnt',
+                  'item_property_list0',
+                 ]
     main(temp,model[modelselect], CrossMethod, RecordFolder,test=False)

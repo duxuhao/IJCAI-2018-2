@@ -25,9 +25,6 @@ def preprocessing(traindf):
     add_list['{}_ratio'.format(name)] = add_list.traded_quantity / add_list.total_quantity
     add_list.loc[add_list.total_quantity < 1000, '{}_ratio'.format(name)] = 0
 
-    #for i in range(get_first_n):
-        #traindf['{}_{}'.format(name, i)] = 0
-
     ipl = {}
     for j in range(len(add_list)):
         ipl[str(add_list.item_property_list_element[j])] = add_list.item_property_list_ratio[j]
@@ -38,14 +35,15 @@ def preprocessing(traindf):
         jlist = []
         for j in i.split(';'):
             try:
-                jlist.append(ipl[j])
+                jlist.append([ipl[j],j])
             except:
                 pass
-        jlist = np.sort(jlist)[::-1]
+        jlist = np.array(jlist)
+        jlist = jlist[jlist[:,0].argsort()][::-1]
+#        jlist = np.sort(jlist)[::-1]
         try:
             for i in range(get_first_n):
-                add[index,i] = jlist[i]
-                #traindf.loc[index, '{}_{}'.format(name, i)] = jlist[i]
+                add[index,i] = jlist[i,1]
         except:
             pass
     for i in range(get_first_n):
@@ -56,11 +54,8 @@ def preprocessing(traindf):
     add_list1 = pd.read_csv('{}_H.csv'.format(name))
     add_list['{}_L_ratio'.format(name)] = add_list.traded_quantity / add_list.total_quantity
     add_list1['{}_H_ratio'.format(name)] = add_list1.traded_quantity / add_list1.total_quantity
-    add_list.loc[add_list.total_quantity < 50, '{}_L_ratio'.format(name)] = 0
-    add_list1.loc[add_list1.total_quantity < 50, '{}_ratio'.format(name)] = 0
-    #for i in range(get_first_n):
-        #traindf['{}_L_{}'.format(name, i)] = 0
-        #traindf['{}_H_{}'.format(name, i)] = 0
+    add_list.loc[add_list.total_quantity < 500, '{}_L_ratio'.format(name)] = 0
+    add_list1.loc[add_list1.total_quantity < 500, '{}_ratio'.format(name)] = 0
     ipl = {}
     ipl1 = {}
     add = np.zeros((len(traindf),get_first_n))
@@ -76,22 +71,27 @@ def preprocessing(traindf):
         for j in i.split(';'):
             t = j.split(':')
             try:
-                jlist.append(ipl1[t[0]])
+                jlist.append([ipl1[t[0]],ipl1[t[0]]])
             except:
                 pass
             try:
                 for k in t[1].split(','):
-                    jlist1.append(ipl[k])
+                    jlist1.append([ipl[k],k])
             except:
                 pass
-        jlist = np.sort(jlist)[::-1]
-        jlist1 = np.sort(jlist1)[::-1]
+        jlist = np.array(jlist)
+        jlist = jlist[jlist[:,0].argsort()][::-1]
+        jlist1 = np.array(jlist1)
+        try:
+            jlist1 = jlist1[jlist1[:,0].argsort()][::-1]
+        except:
+            pass
+#        jlist = np.sort(jlist)[::-1]
+#        jlist1 = np.sort(jlist1)[::-1]
         try:
             for i in range(get_first_n):
-                #traindf.loc[index, '{}_H_{}'.format(name, i)] = jlist[i]
-                #traindf.loc[index, '{}_L_{}'.format(name, i)] = jlist1[i]
-                add[index,i] = jlist[i]
-                add1[index,i] = jlist1[i]
+                add[index,i] = jlist[i,1]
+                add1[index,i] = jlist1[i,1]
         except:
             pass
     for i in range(get_first_n):
