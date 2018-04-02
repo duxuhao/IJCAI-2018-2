@@ -59,8 +59,9 @@ if __name__ == "__main__":
     clf = lgb.LGBMClassifier(random_state=1, num_leaves = 6,
                           n_estimators=200000,max_depth=3,learning_rate = 0.05,
                           subsample=1, n_jobs=30)
-    iteration = train_clf(train, test, col, clf)
+#    iteration = train_clf(train, test, col, clf)
+    iteration = 1032
     clf.n_estimators = iteration
-    train = data[~pd.isnull(data)]
+    train = data[~pd.isnull(data.is_trade)]
     test = data[pd.isnull(data.is_trade)]
     prediction(train, test, col, clf)
