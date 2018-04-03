@@ -166,7 +166,7 @@ def shop_fenduan(data):
     return data
 
 def get_cnt(df1, df2, post):
-    fea_list = []
+    fea_list = ['instance_id']
     for f in ['user_id', 'item_id', 'shop_id', 'item_city_id', 'item_brand_id', 'item_property_list0', 'item_category_list']:
         cnt = df1.groupby(by=f).count()['instance_id'].to_dict()
         fn = '{}_cnt{}'.format(f, post)
@@ -176,21 +176,23 @@ def get_cnt(df1, df2, post):
     return df2
 
 def slide_cnt(data):
-    for TimeSeries in ['day', 'hour_series', 'min_series']:
+    for TimeSeries in ['day', 'hour_series']: # , 'min_series']:
+        print(TimeSeries)
         for index, t in enumerate(range(data[TimeSeries].min() + 1, data[TimeSeries].max() + 1)):  # 18到24号
             df1 = data[data[TimeSeries] == t - 1]
             df2 = data[data[TimeSeries] == t]  # 19到25号
-            df2 = get_cnt(df1, df2,'1{}'.format(t[0]))
+            df2 = get_cnt(df1, df2,'1{}'.format(TimeSeries[0]))
             if index == 0:
                 Df2 = df2
             else:
                 Df2 = pd.concat([df2, Df2])
         data = pd.merge(data, Df2, on=['instance_id'], how='left')
         for index, t in enumerate(range(data[TimeSeries].min() + 1, data[TimeSeries].max() + 1)):
+            print(t)
             # 19到25，25是test
             df1 = data[data['day'] < t]
             df2 = data[data['day'] == t]
-            df2 = get_cnt(df1, df2,'x{}'.format(t[0]))
+            df2 = get_cnt(df1, df2,'x{}'.format(TimeSeries[0]))
             if index == 0:
                 Df2 = df2
             else:
@@ -474,4 +476,4 @@ if __name__ == "__main__":
     data = user_shop(data)
     data=shop_item(data)
     "----------------------------------------------------线下----------------------------------------"
-    data.to_csv('data/train/train.csv',index = None)
+    data.to_csv('data/train/train2.csv',index = None)

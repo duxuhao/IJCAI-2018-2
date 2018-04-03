@@ -32,7 +32,7 @@ def testdata(df,clf,features):
     X = df
     y = df.is_trade
     Loss = []
-    T = X.context_timestamp <= '2018-09-23 23:59:47'
+    T = X.context_timestamp <= '2018-09-23 23:59:59'
     X_train, X_test = X[T], X[~T]
     X_train, X_test = X_train[features], X_test[features]
     y_train, y_test = y[T], y[~T]
@@ -43,20 +43,10 @@ def testdata(df,clf,features):
     return clf
 
 def main(temp, clf, CrossMethod, RecordFolder, test = False):
-    df = pd.read_csv('data/train/train.csv')
+    df = pd.read_csv('data/train/train2.csv')
     df = df[~pd.isnull(df.is_trade)]
-#    df1.context_timestamp += 8*60*60
-#    df1 = convert_time(df1)
-#    features = list(df1.columns)
-#    df = pd.read_csv('data/train/round1_ijcai_18_train_20180301.txt',sep=' ')
-#    df.context_timestamp += 8*60*60
-#    df = preprocessing(df)
-#    df = convert_time(df)
     item_category_list_unique = list(np.unique(df.item_category_list))
     df.item_category_list.replace(item_category_list_unique, list(np.arange(len(item_category_list_unique))), inplace=True)
-#    df1.item_category_list.replace(item_category_list_unique, list(np.arange(len(item_category_list_unique))), inplace=True)
-    addcol = []
-
     uselessfeatures = ['instance_id', 'item_property_list', 'context_id', 'context_timestamp', 'predict_category_property', 'is_trade']
     ColumnName = obtaincol(df, uselessfeatures) # + addcol #obtain columns withouth the useless features
     print(ColumnName)
@@ -92,30 +82,70 @@ if __name__ == "__main__":
                    '*':times,
                    '/':divide,}
 
-    RecordFolder = 'record_newselection_lgb6_01.log'
+    RecordFolder = 'record_newselection_lgb6_train2.log'
     modelselect = 'lgb6'
 
-    temp = ['item_category_list', 'item_price_level', 
-                  'item_sales_level', 
-                  'item_collected_level', 'item_pv_level', 
-                  'user_gender_id', 'user_age_level', 'user_occupation_id', 'user_star_level', 
-                  'context_page_id', 'shop_review_num_level', 'shop_review_positive_rate', 
-                  'shop_score_service', 'shop_score_delivery', 'hour', 'day', 'user_id_query_day_hour', 
-                  'shop_id', 
-                  'item_id_query_day',  'user_id_query_day_item_brand_id', 
-                  'user_id_query_day_hour_item_brand_id', 
-                  'user_id_query_day', 'item_brand_id','user_id_query_day_item_id', 
-                  'check_item_brand_id_ratio', 
+    temp = ['item_category_list', 'item_price_level',
+                  'item_sales_level',
+                  'item_collected_level', 'item_pv_level',
+                  'user_gender_id', 'user_age_level', 'user_occupation_id', 'user_star_level',
+                  'context_page_id', 'shop_review_num_level', 'shop_review_positive_rate',
+                  'shop_score_service', 'shop_score_delivery', 'hour', 'day', 'user_id_query_day_hour',
+                  'shop_id',
+                  'item_id_query_day',  'user_id_query_day_item_brand_id',
+                  'user_id_query_day_hour_item_brand_id',
+                  'user_id_query_day', 'item_brand_id','user_id_query_day_item_id',
+                  'check_item_brand_id_ratio',
                   'check_shop_id_ratio',
                   'check_item_category_list_ratio',
-                  'check_ratio_day_all', 
+                  'check_ratio_day_all',
                   'check_time_day',
                   'item_city_id_shop_cnt',
                   'item_city_id_shop_rev_prob',
                   'item_id_shop_rev_cnt',
                   'item_property_list0',
                   'item_pv_level_price_prob',
-#                  'item_pv_level_shop_rev_cnt',
-#                  'item_city_id_shop_prob',
+                  'item_collected_level_item_prob',
+                  'item_sales_level_price_prob',
+                 ]
+    temp = ['item_category_list', 'item_price_level', 'item_sales_level',  'item_pv_level', 'user_gender_id', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_review_num_level', 'shop_review_positive_rate', 'shop_score_service', 'shop_score_delivery', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'item_id_query_day', 'user_id_query_day_item_brand_id', 'user_id_query_day_hour_item_brand_id', 'user_id_query_day', 'user_id_query_day_item_id', 'check_item_brand_id_ratio', 'check_shop_id_ratio', 'check_item_category_list_ratio', 'check_ratio_day_all', 'check_time_day', 'item_city_id_shop_cnt', 'item_city_id_shop_rev_prob', 'item_id_shop_rev_cnt', 'item_property_list0', 'item_pv_level_price_prob', 'item_collected_level_item_prob', 'item_sales_level_price_prob', 'hour_map']
+    temp = ['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'item_pv_level', 'user_gender_id', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_review_num_level', 'shop_review_positive_rate', 'shop_score_service', 'shop_score_delivery', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'item_id_query_day', 'user_id_query_day_item_brand_id', 'user_id_query_day_hour_item_brand_id', 'user_id_query_day', 'item_brand_id', 'user_id_query_day_item_id', 'check_item_brand_id_ratio', 'check_shop_id_ratio', 'check_item_category_list_ratio', 'check_ratio_day_all', 'check_time_day', 'item_city_id_shop_cnt', 'item_city_id_shop_rev_prob', 'item_id_shop_rev_cnt', 'item_property_list0', 'item_pv_level_price_prob', 'item_collected_level_item_prob', 'item_sales_level_price_prob','item_city_id_cnt1d']
+    temp = ['item_category_list', 
+                  'item_price_level', 
+                  'item_sales_level', 
+                  'item_collected_level', 
+                  #'item_pv_level', 
+                  'user_gender_id', 
+                  'user_age_level', 
+                  'user_occupation_id', 
+                  'user_star_level', 
+                  'context_page_id', 
+                  'shop_review_num_level', 
+                  'shop_review_positive_rate', 
+                  'shop_score_service', 
+                  #'shop_score_delivery', 
+                  'hour', 
+                  'day', 
+                  'user_id_query_day_hour', 
+                  'shop_id', 
+                  #'item_id_query_day', 
+                  'user_id_query_day_item_brand_id', 
+                  'user_id_query_day_hour_item_brand_id', 
+                  'user_id_query_day',
+                  #'item_brand_id',
+                  'user_id_query_day_item_id', 
+                  'check_item_brand_id_ratio',
+                  'check_shop_id_ratio', 
+                  'check_item_category_list_ratio', 
+                  'check_ratio_day_all', 
+                  'check_time_day', 
+                  'item_city_id_shop_cnt', 
+                  'item_city_id_shop_rev_prob', 
+                  'item_id_shop_rev_cnt', 
+                  'item_property_list0', 
+                  'item_pv_level_price_prob', 
+                  'item_collected_level_item_prob',
+                  'item_sales_level_price_prob',
+                  'item_city_id_cnt1d',
                  ]
     main(temp,model[modelselect], CrossMethod, RecordFolder,test=False)

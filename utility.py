@@ -109,6 +109,7 @@ def user_check(df, behaviour):
     df['check_{}_time_day'.format(behaviour)] = check_time_day
     df['check_{}_ratio'.format(behaviour)] = df['check_{}_time_day'.format(behaviour)] / df['user_id_query_day_{}'.format(behaviour)]
 
+    n = 0
     check_time_day_hour_map = np.ones((len(df),1))
     num = {}
     bd = df.day.min()
@@ -119,7 +120,7 @@ def user_check(df, behaviour):
             num[(u,i)] += 1
         except:
             num[(u,i)] = 0
-        check_time_day_map[n-1] = num[(u,i)]
+        check_time_day_hour_map[n-1] = num[(u,i)]
         if (d > bd) | (h > bh):
             num = {}
         bd = d
@@ -133,9 +134,11 @@ def convert_time(df):
     df['day'] = [int(datetime.datetime.fromtimestamp(i).strftime('%d')) for i in df.context_timestamp]
     df['min'] = [int(datetime.datetime.fromtimestamp(i).strftime('%M')) for i in df.context_timestamp]
     df['hour_map'] = df['hour'].apply(map_hour)
-    df['hour_series'] = (df.day-df.day.min()) * 24 + df.hour)
+    df['hour_series'] = (df.day-df.day.min()) * 4 + df.hour_map
     df['min_map'] = df['min'].apply(map_min)
     df['min_series'] = ((df.day-df.day.min()) * 24 + df.hour) * 4 + df.min_map
+#    print(np.unique(df.hour_series))
+#    print(np.unique(df.min_series))
     for f in ['user_id', 'item_id', 'shop_id', 'item_category_list', 'item_city_id', 'user_gender_id', 'user_age_level', 'user_occupation_id', 'item_brand_id']:
         user_query_day = df.groupby([f, 'day']).size().reset_index().rename(columns={0: '{}_query_day'.format(f)})
         df = pd.merge(df, user_query_day, how = 'left', on=[f, 'day'])
@@ -144,15 +147,13 @@ def convert_time(df):
         query_day_hour_map = df.groupby([f, 'day', 'hour_map']).size().reset_index().rename(columns={0: '{}_query_day_hour_map'.format(f)})
         df = pd.merge(df, query_day_hour_map, 'left',on=[f, 'day', 'hour_map'])
         query_min = df.groupby([f, 'min_series']).size().reset_index().rename(columns={0: '{}_query_min_map'.format(f)})
-        df = pd.merge(df, query_min, 'left',on=[f, 'min_map'])
+        df = pd.merge(df, query_min, 'left',on=[f, 'min_series'])
     df['context_timestamp'] = df['context_timestamp'].apply(time2cov)
     df.sort_values(by='context_timestamp',inplace=True)
 
-    for f in ['shop_id', 'item_brand_id', 'item_id', 'item_category_list','item_pv_level','item_sales_level','item_collected_level','item_price_level','context_page_id','predict_category_property_H_0','item_property_list_0']:
-        try:
-            df = user_check(df, f)
-        except:
-            pass
+    for f in ['shop_id', 'item_brand_id', 'item_id', 'item_category_list','item_pv_level','item_sales_level','item_collected_level','item_price_level','context_page_id']: #,'predict_category_property_H_0','item_property_list_0']:
+        df = user_check(df, f)
+
     n = 0
     check_time_day = np.ones((len(df),1))
     num = {}
@@ -175,7 +176,7 @@ def convert_time(df):
     num = {}
     bd = df.day.min()
     bh = df.hour_map.min()
-    for u, d in zip(df.user_id, df.day, df.hour_map):
+    for u, d, h in zip(df.user_id, df.day, df.hour_map):
         n += 1
         try:
             num[(u)] += 1
