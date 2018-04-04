@@ -55,7 +55,7 @@ def main(temp, clf, CrossMethod, RecordFolder, test = False):
                                     RecordFolder = RecordFolder,
                                     LossFunction = modelscore,
                                     label = 'is_trade',
-                                    columnname = ColumnName[:],
+                                    columnname = ColumnName[::-1],
                                     start = temp,
                                     CrossMethod = CrossMethod,
                                     PotentialAdd = []
@@ -147,5 +147,7 @@ if __name__ == "__main__":
                   'item_collected_level_item_prob',
                   'item_sales_level_price_prob',
                   'item_city_id_cnt1d',
+                  'item_collected_level_user_age_cnt',
+                  'user_id_query_day_hour_map_item_pv_level'
                  ]
     main(temp,model[modelselect], CrossMethod, RecordFolder,test=False)

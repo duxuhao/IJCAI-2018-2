@@ -94,18 +94,27 @@ def user_check(df, behaviour):
     df = pd.merge(df, user_day_hour_map, how = 'left', on=['user_id', 'day', 'hour_map',behaviour])
     n = 0
     check_time_day = np.ones((len(df),1))
+    check_time_difference = np.ones((len(df),1))
     num = {}
+    timeseries = {}
     bd = df.day.min()
     for u, i, d in zip(df.user_id, df[behaviour], df.day):
         n += 1
         try:
             num[(u,i)] += 1
+            timeseries[(u,i)] = df.min_series_full[n-1] - timeseries[(u,i)]
+            check_time_difference[n-1] = timeseries[(u,i)]
         except:
             num[(u,i)] = 0
+            timeseries[(u,i)] = df.min_series_full[n-1]
+            check_time_difference[n-1] = 0
+
         check_time_day[n-1] = num[(u,i)]
         if d > bd:
             num = {}
         bd = d
+
+    df['check_{}_min_difference'.format(behaviour)] = check_time_difference
     df['check_{}_time_day'.format(behaviour)] = check_time_day
     df['check_{}_ratio'.format(behaviour)] = df['check_{}_time_day'.format(behaviour)] / df['user_id_query_day_{}'.format(behaviour)]
 
@@ -137,6 +146,7 @@ def convert_time(df):
     df['hour_series'] = (df.day-df.day.min()) * 4 + df.hour_map
     df['min_map'] = df['min'].apply(map_min)
     df['min_series'] = ((df.day-df.day.min()) * 24 + df.hour) * 4 + df.min_map
+    df['min_series_full'] = ((df.day-df.day.min()) * 24 + df.hour) * 60 + df['min']
 #    print(np.unique(df.hour_series))
 #    print(np.unique(df.min_series))
     for f in ['user_id', 'item_id', 'shop_id', 'item_category_list', 'item_city_id', 'user_gender_id', 'user_age_level', 'user_occupation_id', 'item_brand_id']:
@@ -156,18 +166,26 @@ def convert_time(df):
 
     n = 0
     check_time_day = np.ones((len(df),1))
+    check_time_difference = np.ones((len(df),1))
     num = {}
+    timeseries = {}
     bd = df.day.min()
     for u, d in zip(df.user_id, df.day):
         n += 1
         try:
             num[(u)] += 1
+            timeseries[(u)] = df.min_series_full[n-1] - timeseries[(u)]
+            check_time_difference[n-1] = timeseries[(u)]
         except:
             num[(u)] = 0
+            timeseries[(u)] = df.min_series_full[n-1]
+            check_time_difference[n-1] = 0
+
         check_time_day[n-1] = num[(u)]
         if d > bd:
             num = {}
         bd = d
+    df['check_min_difference'] = check_time_difference
     df['check_time_day'] = check_time_day
     df['check_ratio_day_all'] = df['check_time_day'] / df['user_id_query_day']
 

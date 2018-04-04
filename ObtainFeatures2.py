@@ -1,3 +1,4 @@
+import datetime
 import pandas as pd
 import numpy as np
 import lightgbm as lgb
@@ -5,6 +6,7 @@ from sklearn.metrics import log_loss
 from sklearn import preprocessing
 import warnings
 from utility import convert_time
+from multiprocessing import Pool
 
 warnings.filterwarnings("ignore")
 
@@ -165,6 +167,39 @@ def shop_fenduan(data):
     del data['review_map']
     return data
 
+def get_trade(df1,df2,post):
+    fea_list = ['instance_id']
+    for m in ['user_id','user_age_level','user_gender_id','user_occupation_id']:
+        print(m)
+        trd = df1.groupby(by=m).sum()['is_trade'].reset_index()
+        fn = '{}_trade{}'.format(m, post)
+        trd.rename(index=str, columns={"is_trade": fn}, inplace = True)
+        df2 = df2.merge(trd, on = [m], how = 'left')
+        fea_list.append(fn)
+        for n in ['item_id','item_category_list', 'shop_id', 'item_brand_id', 'item_price_level','item_sales_level', 'item_pv_level', 'shop_review_num_level', 'item_city_id']:
+            trd = df1.groupby(by=[m] + [n]).sum()['is_trade'].reset_index() #.to_dict()
+            fn = '{}_{}_trade{}'.format(m, n, post)
+            trd.rename(index=str, columns={"is_trade": fn}, inplace = True)
+            df2 = df2.merge(trd, on = [m] + [n], how = 'left')
+            fea_list.append(fn)
+    df2 = df2[fea_list]
+    return df2
+
+def slice_trade(data):
+    for index, t in enumerate(range(19,26)):
+        print(t)
+        # 19到25，25是test
+        df1 = data[data['day'] < t]
+        df2 = data[data['day'] == t]
+        df2 = get_trade(df1, df2,'xd')
+        if index == 0:
+            Df2 = df2
+        else:
+            Df2 = pd.concat([df2, Df2])
+    data = pd.merge(data, Df2, on=['instance_id'], how='left')
+
+    return data
+
 def get_cnt(df1, df2, post):
     fea_list = ['instance_id']
     for f in ['user_id', 'item_id', 'shop_id', 'item_city_id', 'item_brand_id', 'item_property_list0', 'item_category_list']:
@@ -176,8 +211,8 @@ def get_cnt(df1, df2, post):
     return df2
 
 def slide_cnt(data):
-    for TimeSeries in ['day', 'hour_series']: # , 'min_series']:
-        print(TimeSeries)
+    for TimeSeries in ['day', 'hour_series']:
+#        print(TimeSeries)
         for index, t in enumerate(range(data[TimeSeries].min() + 1, data[TimeSeries].max() + 1)):  # 18到24号
             df1 = data[data[TimeSeries] == t - 1]
             df2 = data[data[TimeSeries] == t]  # 19到25号
@@ -188,7 +223,7 @@ def slide_cnt(data):
                 Df2 = pd.concat([df2, Df2])
         data = pd.merge(data, Df2, on=['instance_id'], how='left')
         for index, t in enumerate(range(data[TimeSeries].min() + 1, data[TimeSeries].max() + 1)):
-            print(t)
+#            print(t)
             # 19到25，25是test
             df1 = data[data['day'] < t]
             df2 = data[data['day'] == t]
@@ -462,12 +497,16 @@ if __name__ == "__main__":
     test = pd.read_csv('data/test/round1_ijcai_18_test_a_20180301.txt',sep=' ')
     train.context_timestamp += 8*60*60
     test.context_timestamp += 8*60*60
+    pool = Pool(8)
     data = pd.concat([train, test])
     data = data.drop_duplicates(subset='instance_id')  # 把instance id去重
+#    data['day'] = [int(datetime.datetime.fromtimestamp(i).strftime('%d')) for i in data.context_timestamp]
     print('make feature')
     data = base_process(data)
     data=shop_fenduan(data)
     data = slide_cnt(data)
+    data = slice_trade(data)
+    print('finish trade count')
     data = zuhe(data)
     print('----------------------------全局统计特征---------------------------------------------------')
     data = item(data)
