@@ -172,16 +172,26 @@ def get_trade(df1,df2,post):
     for m in ['user_id','user_age_level','user_gender_id','user_occupation_id']:
         print(m)
         trd = df1.groupby(by=m).sum()['is_trade'].reset_index()
+        trd2 = df1.groupby(by=m).mean()['is_trade'].reset_index()
         fn = '{}_trade{}'.format(m, post)
+        fn2 = '{}_trade_mean_{}'.format(m, post)
         trd.rename(index=str, columns={"is_trade": fn}, inplace = True)
+        trd2.rename(index=str, columns={"is_trade": fn2}, inplace = True)
         df2 = df2.merge(trd, on = [m], how = 'left')
+        df2 = df2.merge(trd2, on = [m], how = 'left')
         fea_list.append(fn)
+        fea_list.append(fn2)
         for n in ['item_id','item_category_list', 'shop_id', 'item_brand_id', 'item_price_level','item_sales_level', 'item_pv_level', 'shop_review_num_level', 'item_city_id']:
             trd = df1.groupby(by=[m] + [n]).sum()['is_trade'].reset_index() #.to_dict()
+            trd2 = df1.groupby(by=[m] + [n]).mean()['is_trade'].reset_index()
             fn = '{}_{}_trade{}'.format(m, n, post)
+            fn2 = '{}_{}_trade_mean{}'.format(m, n, post)
             trd.rename(index=str, columns={"is_trade": fn}, inplace = True)
+            trd2.rename(index=str, columns={"is_trade": fn}, inplace = True)
             df2 = df2.merge(trd, on = [m] + [n], how = 'left')
+            df2 = df2.merge(trd2, on = [m] + [n], how = 'left')
             fea_list.append(fn)
+            fea_list.append(fn2)
     df2 = df2[fea_list]
     return df2
 

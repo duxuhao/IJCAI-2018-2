@@ -55,7 +55,7 @@ def main(temp, clf, CrossMethod, RecordFolder, test = False):
                                     RecordFolder = RecordFolder,
                                     LossFunction = modelscore,
                                     label = 'is_trade',
-                                    columnname = ColumnName[::-1],
+                                    columnname = ColumnName[:],
                                     start = temp,
                                     CrossMethod = CrossMethod,
                                     PotentialAdd = []
@@ -73,7 +73,7 @@ if __name__ == "__main__":
              'lgb2': lgbm.LGBMClassifier(random_state=1,num_leaves = 29, max_depth=5, n_estimators=1000),
              'lgb3': lgbm.LGBMClassifier(random_state=1, num_leaves = 6, n_estimators=1000,max_depth=3,learning_rate = 0.09, n_jobs=30),
              'lgb4': lgbm.LGBMClassifier(random_state=1, num_leaves = 6, n_estimators=5000,max_depth=3,learning_rate = 0.095, n_jobs=30),
-             'lgb5': lgbm.LGBMClassifier(random_state=1, num_leaves = 6, n_estimators=5000,max_depth=3,learning_rate = 0.1, n_jobs=30),
+             'lgb5': lgbm.LGBMClassifier(random_state=1, num_leaves = 13, n_estimators=5000,max_depth=4,learning_rate = 0.05, n_jobs=30),
              'lgb6': lgbm.LGBMClassifier(random_state=1, num_leaves = 6, n_estimators=5000,max_depth=3,learning_rate = 0.05, n_jobs=30)
             }
 
@@ -82,8 +82,8 @@ if __name__ == "__main__":
                    '*':times,
                    '/':divide,}
 
-    RecordFolder = 'record_newselection_lgb6_train2.log'
-    modelselect = 'lgb6'
+    RecordFolder = 'record_newselection_lgb5_train2.log'
+    modelselect = 'lgb5'
 
     temp = ['item_category_list', 'item_price_level',
                   'item_sales_level',
@@ -148,6 +148,8 @@ if __name__ == "__main__":
                   'item_sales_level_price_prob',
                   'item_city_id_cnt1d',
                   'item_collected_level_user_age_cnt',
-                  'user_id_query_day_hour_map_item_pv_level'
+#                  'user_id_query_day_hour_map_item_pv_level'
+                  'check_item_brand_id_time_day'
                  ]
+    temp = ['user_occupation_id_tradexd','user_occupation_id_item_price_level_tradexd','user_age_level_shop_review_num_level_tradexd','user_id_shop_id_tradexd','user_id_tradexd','item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'item_pv_level', 'user_gender_id', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_review_num_level', 'shop_review_positive_rate', 'shop_score_service', 'shop_score_delivery','hour', 'day', 'user_id_query_day_hour', 'shop_id', 'item_id_query_day', 'user_id_query_day_item_brand_id', 'user_id_query_day_hour_item_brand_id', 'user_id_query_day', 'item_brand_id', 'user_id_query_day_item_id', 'check_item_brand_id_ratio', 'check_shop_id_ratio', 'check_item_category_list_ratio', 'check_ratio_day_all', 'check_time_day', 'item_city_id_shop_cnt', 'item_city_id_shop_rev_prob', 'item_id_shop_rev_cnt', 'item_property_list0', 'item_pv_level_price_prob', 'item_collected_level_item_prob', 'item_sales_level_price_prob']
     main(temp,model[modelselect], CrossMethod, RecordFolder,test=False)
