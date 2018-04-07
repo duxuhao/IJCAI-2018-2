@@ -48,7 +48,7 @@ def base_process(data):
     data['len_predict_category_property'] = data['predict_category_property'].map(lambda x: len(str(x).split(';')))
     for i in range(5):
         data['predict_category_property' + str(i)] = lbl.fit_transform(data['predict_category_property'].map(
-            lambda x: str(str(x).split(';')[i]) if len(str(x).split(';')) > i else ''))
+            lambda x: str(str(x).split(';')[i].split(':')[0]) if len(str(x).split(';')) > i else ''))
     print('context 0,1 feature')
     data['context_page0'] = data['context_page_id'].apply(
         lambda x: 1 if x == 4001 | x == 4002 | x == 4003 | x == 4004 | x == 4007  else 2)
@@ -525,4 +525,6 @@ if __name__ == "__main__":
     data = user_shop(data)
     data=shop_item(data)
     "----------------------------------------------------线下----------------------------------------"
+#    item_category_list_unique = list(np.unique(data.item_category_list))
+#    data.item_category_list.replace(item_category_list_unique, list(np.arange(len(item_category_list_unique))), inplace=True)
     data.to_csv('data/train/train2.csv',index = None)
