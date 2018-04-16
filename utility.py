@@ -4,6 +4,72 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import datetime
+import random
+import scipy.special as special
+
+class BayesSmooth():
+    def __init__(self, alpha, beta, df):
+        self.alpha = alpha
+        self.beta = beta
+        self.df = df
+
+    def sample_from_data(self, alpha, beta, num):
+        I = []
+        C = []
+        for _ in range(num):
+            imp = int(np.ceil(random.random() * self.df.shape[0]))
+            I.append(imp)
+            C.append(self.df.is_trade.sample(n=imp).sum())
+        return I, C
+
+    def update_from_data_by_FPI(self, tries, success, iter_num, epsilon):
+        '''estimate alpha, beta using fixed point iteration'''
+        for i in range(iter_num):
+            if i%100 == 1:
+                print('---{} iteration---'.format(i))
+            new_alpha, new_beta = self.__fixed_point_iteration(tries, success, self.alpha, self.beta)
+            if abs(new_alpha-self.alpha)<epsilon and abs(new_beta-self.beta)<epsilon:
+                break
+            self.alpha = new_alpha
+            self.beta = new_beta
+
+    def __fixed_point_iteration(self, tries, success, alpha, beta):
+        '''fixed point iteration'''
+        sumfenzialpha = 0.0
+        sumfenzibeta = 0.0
+        sumfenmu = 0.0
+        for i in range(len(tries)):
+            sumfenzialpha += (special.digamma(success[i]+alpha) - special.digamma(alpha))
+            sumfenzibeta += (special.digamma(tries[i]-success[i]+beta) - special.digamma(beta))
+            sumfenmu += (special.digamma(tries[i]+alpha+beta) - special.digamma(alpha+beta))
+
+        return alpha*(sumfenzialpha/sumfenmu), beta*(sumfenzibeta/sumfenmu)
+
+    def update_from_data_by_moment(self, tries, success):
+        '''estimate alpha, beta using moment estimation'''
+        mean, var = self.__compute_moment(tries, success)
+        self.alpha = (mean+0.000001) * ((mean+0.000001) * (1.000001 - mean) / (var+0.000001) - 1)
+        #self.beta = (1-mean)*(mean*(1-mean)/(var+0.000001)-1)
+        self.beta = (1.000001 - mean) * ((mean+0.000001) * (1.000001 - mean) / (var+0.000001) - 1)
+
+    def __compute_moment(self, tries, success):
+        '''moment estimation'''
+        ctr_list = []
+        var = 0.0
+        for i in range(len(tries)):
+            ctr_list.append(float(success[i])/tries[i])
+        mean = sum(ctr_list)/len(ctr_list)
+        for ctr in ctr_list:
+            var += pow(ctr-mean, 2)
+
+        return mean, var/(len(ctr_list)-1)
+
+    def export_ratio(self):
+        s = self.sample_from_data(18,1000,10000)
+        self.update_from_data_by_moment(s[0], s[1])
+        s = self.sample_from_data(18,1000,10000)
+        self.update_from_data_by_FPI(s[0], s[1], 1000, 0.00000001)
+        return (self.df.is_trade.sum() + self.alpha) / (self.df.shape[0] + self.alpha + self.beta)
 
 def visualize_feature(featurename, df, visual = 1):
     fig = plt.figure(figsize=(10,5))
@@ -102,8 +168,9 @@ def user_check(df, behaviour):
         n += 1
         try:
             num[(u,i)] += 1
-            timeseries[(u,i)] = df.min_series_full[n-1] - timeseries[(u,i)]
-            check_time_difference[n-1] = timeseries[(u,i)]
+#            timeseries[(u,i)] = df.min_series_full[n-1] - timeseries[(u,i)]
+            check_time_difference[n-1] = df.min_series_full[n-1] - timeseries[(u,i)]
+            timeseries[(u,i)] = df.min_series_full[n-1]
         except:
             num[(u,i)] = 0
             timeseries[(u,i)] = df.min_series_full[n-1]
@@ -207,6 +274,20 @@ def convert_time(df):
         bh = h
     df['check_time_day_hour_map'] = check_time_day
     df['check_ratio_day_hour_map_all'] = df['check_time_day_hour_map'] / df['user_id_query_day_hour_map']
+
+    n = len(df)
+    check_time_difference = np.ones((len(df),1))
+    timeseries = {}
+    for i in range(len(df)): #df.user_id[::-1]:
+        u = df.user_id[n-i-1]
+        try:
+            check_time_difference[n-i-1] = timeseries[(u)]- df.min_series_full[n-i-1]
+        except:
+            check_time_difference[n-i-1] = 0
+        timeseries[(u)] = df.min_series_full[n-i-1]
+
+    df['check_min_difference_ahead'] = check_time_difference
+
     return df
 
 def preKfold(train, test, features):

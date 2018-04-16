@@ -1,0 +1,160 @@
+0  baseline  0:
+0.083889	['check_ratio_day_all', 'check_min_difference_ahead']
+1  context_page_id  0:
+0.083669	['check_ratio_day_all', 'check_min_difference_ahead', 'context_page_id']
+2  item_city_id  0:
+0.083302	['check_ratio_day_all', 'check_min_difference_ahead', 'item_city_id']
+3  item_price_level  0:
+0.082884	['check_ratio_day_all', 'check_min_difference_ahead', 'item_price_level']
+55  predict_category_property0  0:
+0.082863	['check_ratio_day_all', 'check_min_difference_ahead', 'predict_category_property0']
+76  user_age_level_shop_id_trade_meanxd  0:
+0.082439	['check_ratio_day_all', 'check_min_difference_ahead', 'user_age_level_shop_id_trade_meanxd']
+88  user_occupation_id_item_id_trade_meanxd  0:
+0.082147	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd']
+1  context_page_id  0:
+0.082048	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'context_page_id']
+2  item_city_id  0:
+0.082041	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'item_city_id']
+3  item_price_level  0:
+0.081922	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'item_price_level']
+22  item_city_id_query_day  0:
+0.081868	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'item_city_id_query_day']
+29  user_id_query_day_hour_shop_id  0:
+0.081836	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'user_id_query_day_hour_shop_id']
+30  check_shop_id_time_day  0:
+0.08158	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'check_shop_id_time_day']
+34  user_id_query_day_item_id  0:
+0.081389	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'user_id_query_day_item_id']
+93  sale_collect  0:
+0.081247	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect']
+1  context_page_id  0:
+0.081023	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'context_page_id']
+14  hour  0:
+0.080994	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'hour']
+29  user_id_query_day_hour_shop_id  0:
+0.080897	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_hour_shop_id']
+30  check_shop_id_time_day  0:
+0.080653	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'check_shop_id_time_day']
+33  check_item_brand_id_ratio  0:
+0.08064	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'check_item_brand_id_ratio']
+34  user_id_query_day_item_id  0:
+0.080463	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id']
+1  context_page_id  0:
+0.080431	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'context_page_id']
+3  item_price_level  0:
+0.080305	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level']
+14  hour  0:
+0.080269	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'hour']
+36  user_id_query_day_hour_item_category_list  0:
+0.080225	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'user_id_query_day_hour_item_category_list']
+128  item_price_level_user_age_cnt  0:
+0.080137	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt']
+1  context_page_id  0:
+0.080107	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'context_page_id']
+8  len_item_category  0:
+0.080057	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'len_item_category']
+14  hour  0:
+0.079929	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour']
+1  context_page_id  0:
+0.079836	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'context_page_id']
+8  len_item_category  0:
+0.079816	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'len_item_category']
+9  item_category_list2  0:
+0.079814	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_category_list2']
+16  user_id_query_day_hour  0:
+0.079779	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'user_id_query_day_hour']
+21  item_city_id_query_day  0:
+0.079739	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_city_id_query_day']
+116  item_id_user_prob  0:
+0.079704	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob']
+8  len_item_category  0:
+0.079652	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'len_item_category']
+19  shop_id_query_day_hour_map  0:
+0.079595	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'shop_id_query_day_hour_map']
+32  check_item_brand_id_ratio  0:
+0.079546	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'check_item_brand_id_ratio']
+65  user_id_tradexd  0:
+0.079461	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd']
+1  context_page_id  0:
+0.079443	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'context_page_id']
+8  len_item_category  0:
+0.079376	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'len_item_category']
+9  item_category_list2  0:
+0.079368	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'item_category_list2']
+19  shop_id_query_day_hour_map  0:
+0.079343	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'shop_id_query_day_hour_map']
+25  user_occupation_id_query_day  0:
+0.079342	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'user_occupation_id_query_day']
+32  check_item_brand_id_ratio  0:
+0.079292	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio']
+1  context_page_id  0:
+0.079269	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'context_page_id']
+8  len_item_category  0:
+0.079222	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'len_item_category']
+19  shop_id_query_day_hour_map  0:
+0.079207	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'shop_id_query_day_hour_map']
+25  user_occupation_id_query_day  0:
+0.079197	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'user_occupation_id_query_day']
+60  shop_id_cnt1h  0:
+0.079196	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'shop_id_cnt1h']
+99  item_sales_level_city_cnt  0:
+0.079181	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_sales_level_city_cnt']
+141  item_price_level_shop_cnt  0:
+0.079172	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt']
+8  len_item_category  0:
+0.079145	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'len_item_category']
+21  item_city_id_query_day  0:
+0.079103	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day']
+8  len_item_category  0:
+0.079094	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'len_item_category']
+9  item_category_list2  0:
+0.079053	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_category_list2']
+44  user_id_query_day_hour_map_item_price_level  0:
+0.079039	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'user_id_query_day_hour_map_item_price_level']
+49  check_time_day  0:
+0.079039	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'check_time_day']
+63  user_id_item_id_trade_meanxd  0:
+0.079002	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'user_id_item_id_trade_meanxd']
+125  item_id_user_occ_prob  0:
+0.078978	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob']
+0  baseline  0:
+0.078978	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob']
+63  user_id_item_id_trade_meanxd  0:
+0.078962	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_id_item_id_trade_meanxd']
+64  user_id_shop_id_tradexd  0:
+0.078957	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_id_shop_id_tradexd']
+110  user_star_level_user_gender_cnt  0:
+0.078951	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt']
+1  context_page_id  0:
+0.078938	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'context_page_id']
+9  item_category_list2  0:
+0.078891	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2']
+1  context_page_id  0:
+0.078876	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2', 'context_page_id']
+62  user_id_item_id_trade_meanxd  0:
+0.078835	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2', 'user_id_item_id_trade_meanxd']
+63  user_id_shop_id_tradexd  0:
+0.078813	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2', 'user_id_shop_id_tradexd']
+0  baseline  0:
+0.078813	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2', 'user_id_shop_id_tradexd']
+1  context_page_id  0:
+0.078752	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2', 'user_id_shop_id_tradexd', 'context_page_id']
+42  user_id_query_day_hour_map_item_price_level  0:
+0.078743	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2', 'user_id_shop_id_tradexd', 'context_page_id', 'user_id_query_day_hour_map_item_price_level']
+50  predict_category_property3  0:
+0.078739	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2', 'user_id_shop_id_tradexd', 'context_page_id', 'predict_category_property3']
+79  user_occupation_id_tradexd  0:
+0.078732	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2', 'user_id_shop_id_tradexd', 'context_page_id', 'user_occupation_id_tradexd']
+103  user_gender_id_user_cnt  0:
+0.078729	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2', 'user_id_shop_id_tradexd', 'context_page_id', 'user_gender_id_user_cnt']
+134  item_brand_id_shop_prob  0:
+0.078706	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2', 'user_id_shop_id_tradexd', 'context_page_id', 'item_brand_id_shop_prob']
+9  item_property_list5  0:
+0.078696	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2', 'user_id_shop_id_tradexd', 'context_page_id', 'item_brand_id_shop_prob', 'item_property_list5']
+11  age0  0:
+0.078652	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2', 'user_id_shop_id_tradexd', 'context_page_id', 'item_brand_id_shop_prob', 'age0']
+127  shop_review_num_level_user_gender_cnt  0:
+0.078652	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2', 'user_id_shop_id_tradexd', 'context_page_id', 'item_brand_id_shop_prob', 'shop_review_num_level_user_gender_cnt']
+12  hour_map  0:
+0.078597	['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2', 'user_id_shop_id_tradexd', 'context_page_id', 'item_brand_id_shop_prob', 'shop_review_num_level_user_gender_cnt', 'hour_map']

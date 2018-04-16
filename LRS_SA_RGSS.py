@@ -28,10 +28,10 @@ class LRS_SA_RGSS_combination():
             self.ScoreUpdate()
             self.greedyscore = self.bestscore
             print('random select starts with:\n {0}\n score: {1}'.format(self.bestfeature, self.greedyscore))
-            try:
-                self.MyRandom()
-            except:
-                pass
+#            try:
+#                self.MyRandom()
+#            except:
+#                pass
             if self.CrossMethod != 0:
                 if 1: #self.greedyscore == self.score:
                     print('small cycle cross')
