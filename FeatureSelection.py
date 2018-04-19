@@ -43,11 +43,11 @@ def testdata(df,clf,features):
     return clf
 
 def main(temp, clf, CrossMethod, RecordFolder, test = False):
-    df = pd.read_csv('data/train/train2.csv')
+    df = pd.read_csv('data/train/trainb.csv')
     df = df[~pd.isnull(df.is_trade)]
     item_category_list_unique = list(np.unique(df.item_category_list))
     df.item_category_list.replace(item_category_list_unique, list(np.arange(len(item_category_list_unique))), inplace=True)
-    uselessfeatures = ['instance_id', 'item_property_list', 'context_id', 'context_timestamp', 'predict_category_property', 'is_trade']
+    uselessfeatures = ['used','instance_id', 'item_property_list', 'context_id', 'context_timestamp', 'predict_category_property', 'is_trade']
     ColumnName = obtaincol(df, uselessfeatures) # + addcol #obtain columns withouth the useless features
     print(ColumnName)
     a = LSR.LRS_SA_RGSS_combination(df = df,
@@ -55,7 +55,7 @@ def main(temp, clf, CrossMethod, RecordFolder, test = False):
                                     RecordFolder = RecordFolder,
                                     LossFunction = modelscore,
                                     label = 'is_trade',
-                                    columnname = ColumnName[::3],
+                                    columnname = ColumnName[::2],
                                     start = temp,
                                     CrossMethod = CrossMethod,
                                     PotentialAdd = []
@@ -82,7 +82,7 @@ if __name__ == "__main__":
                    '*':times,
                    '/':divide,}
 
-    RecordFolder = 'record_fresh_Y_15.log'
+    RecordFolder = 'record_b.log'
     modelselect = 'lgb6'
 
     temp = ['item_category_list', 'item_price_level',
@@ -182,4 +182,7 @@ if __name__ == "__main__":
     temp = ['check_ratio_day_all','check_min_difference_ahead']
     temp = ['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob']
     temp = ['check_ratio_day_all', 'check_min_difference_ahead', 'user_occupation_id_item_id_trade_meanxd', 'sale_collect', 'user_id_query_day_item_id', 'item_price_level_user_age_cnt', 'hour', 'item_id_user_prob', 'user_id_tradexd', 'check_item_brand_id_ratio', 'item_price_level_shop_cnt', 'item_city_id_query_day', 'item_id_user_occ_prob', 'user_star_level_user_gender_cnt', 'item_category_list2', 'user_id_shop_id_tradexd']
+    temp = ['user_age_level_query_day','user_age_level_item_brand_id_trade_meanxd','item_city_id_brand_prob','item_price_level_brand_cnt','item_brand_id_user_prob','check_min_difference_ahead','item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_gender_id', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_review_positive_rate', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'user_id_query_day_item_brand_id', 'user_id_query_day_hour_item_brand_id', 'user_id_query_day', 'user_id_query_day_item_id', 'check_item_brand_id_ratio', 'check_shop_id_ratio', 'check_item_category_list_ratio', 'check_ratio_day_all', 'item_city_id_shop_cnt', 'item_city_id_shop_rev_prob', 'item_id_shop_rev_cnt', 'item_property_list0', 'item_pv_level_price_prob', 'item_collected_level_item_prob', 'item_sales_level_price_prob', 'item_city_id_cnt1d', 'item_collected_level_user_age_cnt', 'item_price_level_item_cnt', 'item_price_level_item_prob', 'user_id_shop_id_trade_meanxd', 'user_age_level_trade_meanxd', 'user_id_item_category_list_tradexd'] 
+    temp = ['user_age_level_query_day', 'user_age_level_item_brand_id_trade_meanxd', 'item_city_id_brand_prob', 'item_price_level_brand_cnt', 'item_brand_id_user_prob', 'check_min_difference_ahead', 'item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_gender_id', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_review_positive_rate', 'shop_score_service', 'hour', 'day', 'shop_id', 'user_id_query_day_hour_item_brand_id', 'user_id_query_day', 'user_id_query_day_item_id', 'check_item_brand_id_ratio', 'check_shop_id_ratio', 'check_item_category_list_ratio', 'check_ratio_day_all', 'item_city_id_shop_cnt', 'item_city_id_shop_rev_prob', 'item_id_shop_rev_cnt', 'item_property_list0', 'item_pv_level_price_prob', 'item_collected_level_item_prob', 'item_sales_level_price_prob', 'item_city_id_cnt1d', 'item_collected_level_user_age_cnt', 'item_price_level_item_cnt', 'item_price_level_item_prob', 'user_id_shop_id_trade_meanxd', 'user_age_level_trade_meanxd', 'user_id_item_category_list_tradexd', 'item_city_id_user_gender_cnt', 'item_pv_level_item_cnt']
+    temp = ['item_brand_id_item_cnt','user_age_level_query_day', 'user_age_level_item_brand_id_trade_meanxd', 'item_city_id_brand_prob', 'item_price_level_brand_cnt', 'item_brand_id_user_prob', 'check_min_difference_ahead', 'item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_gender_id', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_review_positive_rate', 'shop_score_service', 'hour', 'day', 'shop_id', 'user_id_query_day_hour_item_brand_id', 'user_id_query_day', 'user_id_query_day_item_id', 'check_item_brand_id_ratio', 'check_shop_id_ratio', 'check_item_category_list_ratio', 'check_ratio_day_all', 'item_city_id_shop_cnt', 'item_city_id_shop_rev_prob', 'item_id_shop_rev_cnt', 'item_property_list0', 'item_pv_level_price_prob', 'item_sales_level_price_prob', 'item_city_id_cnt1d', 'item_collected_level_user_age_cnt', 'item_price_level_item_cnt', 'item_price_level_item_prob', 'user_id_shop_id_trade_meanxd', 'user_age_level_trade_meanxd', 'user_id_item_category_list_tradexd', 'item_city_id_user_gender_cnt', 'item_pv_level_item_cnt', 'user_gender_id_item_id_trade_meanxd']
     main(temp,model[modelselect], CrossMethod, RecordFolder,test=False)

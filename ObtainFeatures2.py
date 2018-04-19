@@ -505,10 +505,15 @@ def shop_item(data):
 if __name__ == "__main__":
     train = pd.read_csv('data/train/round1_ijcai_18_train_20180301.txt',sep=' ')
     test = pd.read_csv('data/test/round1_ijcai_18_test_a_20180301.txt',sep=' ')
-    train.context_timestamp += 8*60*60
-    test.context_timestamp += 8*60*60
+    test2 = pd.read_csv('data/test/round1_ijcai_18_test_b_20180418.txt',sep = ' ')
+    train.context_timestamp += 8 * 60 * 60
+    test.context_timestamp += 8 * 60 * 60
+    test2.context_timestamp += 8 * 60 * 60
+    train['used'] = 'a'
+    test['used'] = 'a'
+    test2['used'] = 'b'
     pool = Pool(8)
-    data = pd.concat([train, test])
+    data = pd.concat([train, test, test2])
     data = data.drop_duplicates(subset='instance_id')  # 把instance id去重
 #    data['day'] = [int(datetime.datetime.fromtimestamp(i).strftime('%d')) for i in data.context_timestamp]
     print('make feature')
@@ -527,4 +532,4 @@ if __name__ == "__main__":
     "----------------------------------------------------线下----------------------------------------"
 #    item_category_list_unique = list(np.unique(data.item_category_list))
 #    data.item_category_list.replace(item_category_list_unique, list(np.arange(len(item_category_list_unique))), inplace=True)
-    data.to_csv('data/train/train2.csv',index = None)
+    data.to_csv('data/train/trainb.csv',index = None)
