@@ -1,0 +1,110 @@
+0  baseline  0:
+0.081727	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_gender_id', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_review_num_level', 'shop_review_positive_rate', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id']
+3  len_item_property  0:
+0.081719	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_gender_id', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_review_num_level', 'shop_review_positive_rate', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'len_item_property']
+5  item_property_list1  0:
+0.081666	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_gender_id', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_review_num_level', 'shop_review_positive_rate', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'item_property_list1']
+15  user_id_query_min_map  0:
+0.081522	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_gender_id', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_review_num_level', 'shop_review_positive_rate', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'user_id_query_min_map']
+33  check_shop_id_min_difference  0:
+0.080768	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_gender_id', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_review_num_level', 'shop_review_positive_rate', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_shop_id_min_difference']
+34  check_shop_id_ratio  0:
+0.080653	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_gender_id', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_review_num_level', 'shop_review_positive_rate', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_shop_id_ratio']
+38  check_item_brand_id_ratio  0:
+0.080595	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_gender_id', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_review_num_level', 'shop_review_positive_rate', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio']
+reverse  user_gender_id  0:
+0.080553	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_review_num_level', 'shop_review_positive_rate', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio']
+reverse  shop_review_num_level  0:
+0.080535	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_review_positive_rate', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio']
+reverse  shop_review_positive_rate  0:
+0.080493	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio']
+4  item_category_list2  0:
+0.080475	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'item_category_list2']
+15  user_id_query_min_map  0:
+0.080382	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'user_id_query_min_map']
+32  user_id_query_day_hour_shop_id  0:
+0.08037	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'user_id_query_day_hour_shop_id']
+39  user_id_query_day_hour_item_id  0:
+0.080209	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'user_id_query_day_hour_item_id']
+45  check_item_category_list_ratio  0:
+0.080126	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_item_category_list_ratio']
+69  check_min_difference_ahead  0:
+0.079697	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead']
+reverse  user_occupation_id  0:
+0.079637	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead']
+4  item_category_list2  0:
+0.079614	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_category_list2']
+13  min_map  0:
+0.079606	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'min_map']
+15  user_id_query_min_map  0:
+0.079503	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'user_id_query_min_map']
+39  user_id_query_day_hour_item_id  0:
+0.079421	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'user_id_query_day_hour_item_id']
+208  item_brand_id_shop_cnt  0:
+0.079358	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_brand_id_shop_cnt']
+209  item_city_id_shop_cnt  0:
+0.079353	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt']
+12  hour_map  0:
+0.079346	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'hour_map']
+13  min_map  0:
+0.079318	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'min_map']
+15  user_id_query_min_map  0:
+0.079211	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_min_map']
+39  user_id_query_day_hour_item_id  0:
+0.079142	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id']
+0  baseline  0:
+0.079142	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id']
+5  item_category_list2  0:
+0.079136	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_category_list2']
+16  user_id_query_min_map  0:
+0.079069	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'user_id_query_min_map']
+49  check_item_pv_level_ratio  0:
+0.079066	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'check_item_pv_level_ratio']
+54  check_item_sales_level_ratio_hour_map  0:
+0.079058	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'check_item_sales_level_ratio_hour_map']
+159  user_star_level_user_cnt  0:
+0.079056	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'user_star_level_user_cnt']
+172  item_pv_level_user_cnt  0:
+0.079048	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt']
+0  baseline  0:
+0.079048	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt']
+22  user_id_query_day  0:
+0.078988	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'user_id_query_day']
+77  check_ratio_day_all  0:
+0.07892	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all']
+2  item_city_id  0:
+0.078918	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'item_city_id']
+8  user_gender_id  0:
+0.078917	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'user_gender_id']
+15  item_property_list6  0:
+0.078897	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'item_property_list6']
+17  gender0  0:
+0.078889	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'gender0']
+22  user_id_query_day  0:
+0.078745	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'user_id_query_day']
+0  baseline  0:
+0.078745	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'user_id_query_day']
+4  item_pv_level  0:
+0.078738	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'user_id_query_day', 'item_pv_level']
+7  shop_star_level  0:
+0.078713	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'user_id_query_day', 'shop_star_level']
+8  user_gender_id  0:
+0.078693	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'user_id_query_day', 'user_gender_id']
+12  item_property_list0  0:
+0.078685	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'user_id_query_day', 'item_property_list0']
+17  gender0  0:
+0.078683	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'user_id_query_day', 'gender0']
+24  item_id_query_day_hour_map  0:
+0.078676	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'user_id_query_day', 'item_id_query_day_hour_map']
+55  user_id_query_day_item_pv_level  0:
+0.078669	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'user_id_query_day', 'user_id_query_day_item_pv_level']
+67  user_id_query_day_item_price_level  0:
+0.078642	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'user_id_query_day', 'user_id_query_day_item_price_level']
+97  user_id_item_id_trade_meanxd  0:
+0.07861	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'user_id_query_day', 'user_id_item_id_trade_meanxd']
+98  user_id_item_category_list_trade_meanxd  0:
+0.078594	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'user_id_query_day', 'user_id_item_category_list_trade_meanxd']
+100  user_id_item_brand_id_trade_meanxd  0:
+0.078592	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'user_id_query_day', 'user_id_item_brand_id_trade_meanxd']
+105  user_id_item_city_id_trade_meanxd  0:
+0.078579	['item_category_list', 'item_price_level', 'item_sales_level', 'item_collected_level', 'user_age_level', 'user_star_level', 'context_page_id', 'shop_score_service', 'hour', 'day', 'user_id_query_day_hour', 'shop_id', 'check_item_brand_id_ratio', 'check_min_difference_ahead', 'item_city_id_shop_cnt', 'user_id_query_day_hour_item_id', 'item_pv_level_user_cnt', 'check_ratio_day_all', 'user_id_query_day', 'user_id_item_city_id_trade_meanxd']
