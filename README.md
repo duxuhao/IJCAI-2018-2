@@ -1,2 +1,2 @@
 # IJCAI-2018-2
-For the ML
+Top 12 at first round
